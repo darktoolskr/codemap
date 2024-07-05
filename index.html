@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_c37ae19a24f901f5ba86067c1e389ed7 {
+                #map_b987a647cfce68f1d9003ca4f6e76ae1 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,23 +35,33 @@
                 .leaflet-container { font-size: 1rem; }
             </style>
         
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_c37ae19a24f901f5ba86067c1e389ed7" ></div>
+            <div class="folium-map" id="map_b987a647cfce68f1d9003ca4f6e76ae1" ></div>
         
+
+<script>
+    function rotateMap(event) {
+        var alpha = event.alpha; // Get the rotation angle in degrees
+        document.getElementById('map_b987a647cfce68f1d9003ca4f6e76ae1').style.transform = 'rotate(' + alpha + 'deg)';
+    }
+
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', rotateMap, true);
+    } else {
+        alert("Device orientation not supported.");
+    }
+</script>
 </body>
 <script>
     
     
-            var map_c37ae19a24f901f5ba86067c1e389ed7 = L.map(
-                "map_c37ae19a24f901f5ba86067c1e389ed7",
+            var map_b987a647cfce68f1d9003ca4f6e76ae1 = L.map(
+                "map_b987a647cfce68f1d9003ca4f6e76ae1",
                 {
                     center: [59.9643163, 30.2862535],
                     crs: L.CRS.EPSG3857,
@@ -65,63 +75,46 @@
 
         
     
-            var tile_layer_e3d583f84a6f82f807931d91024751a7 = L.tileLayer(
+            var tile_layer_56f5c5aaf8a3d395d46651b2d79331c9 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_e3d583f84a6f82f807931d91024751a7.addTo(map_c37ae19a24f901f5ba86067c1e389ed7);
+            tile_layer_56f5c5aaf8a3d395d46651b2d79331c9.addTo(map_b987a647cfce68f1d9003ca4f6e76ae1);
         
     
-            var marker_1d01b47ef90a6271af8f9bbd07d98064 = L.marker(
+            var marker_2d791605969b97f922c2e202076f3f8a = L.marker(
                 [59.9643163, 30.2862535],
                 {}
-            ).addTo(map_c37ae19a24f901f5ba86067c1e389ed7);
+            ).addTo(map_b987a647cfce68f1d9003ca4f6e76ae1);
         
     
-            var icon_b6972f4f04fe58e2e8e758490d2fba2e = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "#378803", "prefix": "glyphicon"}
+            var icon_cd28d1b1acbab33e90ef3fcde164c107 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "#a35935", "prefix": "glyphicon"}
             );
-            marker_1d01b47ef90a6271af8f9bbd07d98064.setIcon(icon_b6972f4f04fe58e2e8e758490d2fba2e);
+            marker_2d791605969b97f922c2e202076f3f8a.setIcon(icon_cd28d1b1acbab33e90ef3fcde164c107);
         
     
-        var popup_63e22ca9594caf7795a9a3f57471648b = L.popup({"maxWidth": "100%"});
+        var popup_ac3c32dd6fcad95b0437eb84230ab252 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_f9f9e72b8e0481a1b644bb9888cab458 = $(`<div id="html_f9f9e72b8e0481a1b644bb9888cab458" style="width: 100.0%; height: 100.0%;"> *456#</div>`)[0];
-                popup_63e22ca9594caf7795a9a3f57471648b.setContent(html_f9f9e72b8e0481a1b644bb9888cab458);
+                var html_9765585b5a02edadccb46fae2792cead = $(`<div id="html_9765585b5a02edadccb46fae2792cead" style="width: 100.0%; height: 100.0%;"> *456#</div>`)[0];
+                popup_ac3c32dd6fcad95b0437eb84230ab252.setContent(html_9765585b5a02edadccb46fae2792cead);
             
         
 
-        marker_1d01b47ef90a6271af8f9bbd07d98064.bindPopup(popup_63e22ca9594caf7795a9a3f57471648b)
+        marker_2d791605969b97f922c2e202076f3f8a.bindPopup(popup_ac3c32dd6fcad95b0437eb84230ab252)
         ;
 
         
     
     
-            var marker_cluster_fa82ba38c05c0eb9cbb950a13b616c89 = L.markerClusterGroup(
+            var locate_control_2dc02d2cda095ccbd0fb047a610a998f = L.control.locate(
                 {}
-            );
-        
-    
-            marker_cluster_fa82ba38c05c0eb9cbb950a13b616c89.addTo(map_c37ae19a24f901f5ba86067c1e389ed7);
-        
-    
-            var locate_control_a9cd7ad46a0a5d401d7f0bd856451c9f = L.control.locate(
-                {}
-            ).addTo(map_c37ae19a24f901f5ba86067c1e389ed7);
+            ).addTo(map_b987a647cfce68f1d9003ca4f6e76ae1);
             
-        
-    
-            var tile_layer_6c7c8f2fe1be792e527aeb19172f7838 = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "OpenStreetMap", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "rotate": true, "subdomains": "abc", "tms": false}
-            );
-        
-    
-            tile_layer_6c7c8f2fe1be792e527aeb19172f7838.addTo(map_c37ae19a24f901f5ba86067c1e389ed7);
         
 </script>
 </html>
