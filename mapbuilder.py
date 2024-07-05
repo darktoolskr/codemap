@@ -13,7 +13,8 @@ key = '781b89ffc5eb47ab8e1b849822beacf1'
 geocoder = OpenCageGeocode(key)
 
 def random_color():
-    return "#{:06x}".format(random.randint(0, 0xFFFFFF))
+    return random.choice(['lightgray', 'beige', 'darkblue', 'orange', 'red', 'pink', 'darkred', 'lightgreen', 'darkpurple', 'blue', 'lightred', 'black', 'darkgreen', 'cadetblue', 'gray', 'green', 'lightblue', 'purple', 'white'])
+
 
 def get_lat_long(address):
     result = geocoder.geocode(address)
@@ -32,10 +33,11 @@ map_osm = folium.Map(location=[df['Latitude'].mean(), df['Longitude'].mean()], z
 
 # Add markers to the map
 for _, row in df.iterrows():
+    c = random_color()
     folium.Marker(
         location=[row['Latitude'], row['Longitude']],
         popup=f"{row['code']}",
-        icon=folium.Icon(color=random_color)
+        icon=folium.Icon(color=c)
     ).add_to(map_osm)
 
 # Add a Leaflet control for locating user's position
