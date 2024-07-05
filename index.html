@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_60a614ee2349fa5dfbc9e425392c64af {
+                #map_e8bec7701b8edb5bcc063fb59dd4ef38 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -37,16 +37,37 @@
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+
+<style>
+    #map {
+        width: 100vw;
+        height: 100vh;
+        transform-origin: center center;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+</style>
 </head>
 <body>
+<div style="position: absolute; top: 10px; left: 10px; z-index: 1000;">
+    <button onclick="rotateMapLeft()">Rotate Left</button>
+    <button onclick="rotateMapRight()">Rotate Right</button>
+</div>
+
     
     
-            <div class="folium-map" id="map_60a614ee2349fa5dfbc9e425392c64af" ></div>
+            <div class="folium-map" id="map_e8bec7701b8edb5bcc063fb59dd4ef38" ></div>
         
 
 <script>
-    var mapContainer = document.getElementById('map-container');
-    var mapElement = document.getElementById('map_60a614ee2349fa5dfbc9e425392c64af');
+    var mapElement = document.getElementById('map');
     var rotationAngle = 0;
 
     function rotateMapLeft() {
@@ -80,15 +101,15 @@
         }
     }
 
-    mapContainer.addEventListener('touchstart', onTouchStart, false);
-    mapContainer.addEventListener('touchmove', onTouchMove, false);
+    document.addEventListener('touchstart', onTouchStart, false);
+    document.addEventListener('touchmove', onTouchMove, false);
 </script>
 </body>
 <script>
     
     
-            var map_60a614ee2349fa5dfbc9e425392c64af = L.map(
-                "map_60a614ee2349fa5dfbc9e425392c64af",
+            var map_e8bec7701b8edb5bcc063fb59dd4ef38 = L.map(
+                "map_e8bec7701b8edb5bcc063fb59dd4ef38",
                 {
                     center: [59.9643163, 30.2862535],
                     crs: L.CRS.EPSG3857,
@@ -102,45 +123,45 @@
 
         
     
-            var tile_layer_859ef6556b4e776fba7c190a385e635d = L.tileLayer(
+            var tile_layer_dc17bfa57ee0324fa466a59f48986aae = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_859ef6556b4e776fba7c190a385e635d.addTo(map_60a614ee2349fa5dfbc9e425392c64af);
+            tile_layer_dc17bfa57ee0324fa466a59f48986aae.addTo(map_e8bec7701b8edb5bcc063fb59dd4ef38);
         
     
-            var marker_04b9ae043df7d079c331ad7079fcc731 = L.marker(
+            var marker_56d06455a653c9b19f25204870146a24 = L.marker(
                 [59.9643163, 30.2862535],
                 {}
-            ).addTo(map_60a614ee2349fa5dfbc9e425392c64af);
+            ).addTo(map_e8bec7701b8edb5bcc063fb59dd4ef38);
         
     
-            var icon_343552e556317dff1caecaf014c08db7 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "#6658ed", "prefix": "glyphicon"}
+            var icon_47746dcdd8c28c306dbcfe8d89541a10 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "#d4e1eb", "prefix": "glyphicon"}
             );
-            marker_04b9ae043df7d079c331ad7079fcc731.setIcon(icon_343552e556317dff1caecaf014c08db7);
+            marker_56d06455a653c9b19f25204870146a24.setIcon(icon_47746dcdd8c28c306dbcfe8d89541a10);
         
     
-        var popup_59c1bc5600cd1aa6151b8a4f347a8620 = L.popup({"maxWidth": "100%"});
+        var popup_0e925bd4030563a3c004edab96247118 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_113bb022154c6d5a5ee6a4d41bbc0440 = $(`<div id="html_113bb022154c6d5a5ee6a4d41bbc0440" style="width: 100.0%; height: 100.0%;"> *456#</div>`)[0];
-                popup_59c1bc5600cd1aa6151b8a4f347a8620.setContent(html_113bb022154c6d5a5ee6a4d41bbc0440);
+                var html_c8815bdb32326b15a48eeca6f743fc24 = $(`<div id="html_c8815bdb32326b15a48eeca6f743fc24" style="width: 100.0%; height: 100.0%;"> *456#</div>`)[0];
+                popup_0e925bd4030563a3c004edab96247118.setContent(html_c8815bdb32326b15a48eeca6f743fc24);
             
         
 
-        marker_04b9ae043df7d079c331ad7079fcc731.bindPopup(popup_59c1bc5600cd1aa6151b8a4f347a8620)
+        marker_56d06455a653c9b19f25204870146a24.bindPopup(popup_0e925bd4030563a3c004edab96247118)
         ;
 
         
     
     
-            var locate_control_d05f7bc20dba9d52a8e90a72a4566b89 = L.control.locate(
+            var locate_control_52d048830fa9e9266e807a7914555987 = L.control.locate(
                 {}
-            ).addTo(map_60a614ee2349fa5dfbc9e425392c64af);
+            ).addTo(map_e8bec7701b8edb5bcc063fb59dd4ef38);
             
         
 </script>
