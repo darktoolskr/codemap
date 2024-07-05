@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_b987a647cfce68f1d9003ca4f6e76ae1 {
+                #map_5843230df7f348fc16f2136e662e3eb8 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -41,27 +41,53 @@
 <body>
     
     
-            <div class="folium-map" id="map_b987a647cfce68f1d9003ca4f6e76ae1" ></div>
+            <div class="folium-map" id="map_5843230df7f348fc16f2136e662e3eb8" ></div>
         
 
 <script>
-    function rotateMap(event) {
-        var alpha = event.alpha; // Get the rotation angle in degrees
-        document.getElementById('map_b987a647cfce68f1d9003ca4f6e76ae1').style.transform = 'rotate(' + alpha + 'deg)';
+    var mapElement = document.getElementById('map_5843230df7f348fc16f2136e662e3eb8');
+    var rotationAngle = 0;
+
+    function rotateMapLeft() {
+        rotationAngle = (rotationAngle - 15) % 360;
+        mapElement.style.transform = 'rotate(' + rotationAngle + 'deg)';
     }
 
-    if (window.DeviceOrientationEvent) {
-        window.addEventListener('deviceorientation', rotateMap, true);
-    } else {
-        alert("Device orientation not supported.");
+    function rotateMapRight() {
+        rotationAngle = (rotationAngle + 15) % 360;
+        mapElement.style.transform = 'rotate(' + rotationAngle + 'deg)';
     }
+
+    var startAngle, initialRotationAngle;
+
+    function onTouchStart(event) {
+        if (event.touches.length === 2) {
+            var touch1 = event.touches[0];
+            var touch2 = event.touches[1];
+            startAngle = Math.atan2(touch2.pageY - touch1.pageY, touch2.pageX - touch1.pageX) * 180 / Math.PI;
+            initialRotationAngle = rotationAngle;
+        }
+    }
+
+    function onTouchMove(event) {
+        if (event.touches.length === 2) {
+            var touch1 = event.touches[0];
+            var touch2 = event.touches[1];
+            var currentAngle = Math.atan2(touch2.pageY - touch1.pageY, touch2.pageX - touch1.pageX) * 180 / Math.PI;
+            rotationAngle = initialRotationAngle + (currentAngle - startAngle);
+            mapElement.style.transform = 'rotate(' + rotationAngle + 'deg)';
+        }
+    }
+
+    mapElement.addEventListener('touchstart', onTouchStart, false);
+    mapElement.addEventListener('touchmove', onTouchMove, false);
 </script>
 </body>
 <script>
     
     
-            var map_b987a647cfce68f1d9003ca4f6e76ae1 = L.map(
-                "map_b987a647cfce68f1d9003ca4f6e76ae1",
+            var map_5843230df7f348fc16f2136e662e3eb8 = L.map(
+                "map_5843230df7f348fc16f2136e662e3eb8",
                 {
                     center: [59.9643163, 30.2862535],
                     crs: L.CRS.EPSG3857,
@@ -75,45 +101,45 @@
 
         
     
-            var tile_layer_56f5c5aaf8a3d395d46651b2d79331c9 = L.tileLayer(
+            var tile_layer_262c8c47986d2c4da595ad082eaa1e01 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_56f5c5aaf8a3d395d46651b2d79331c9.addTo(map_b987a647cfce68f1d9003ca4f6e76ae1);
+            tile_layer_262c8c47986d2c4da595ad082eaa1e01.addTo(map_5843230df7f348fc16f2136e662e3eb8);
         
     
-            var marker_2d791605969b97f922c2e202076f3f8a = L.marker(
+            var marker_8b604c8ae622c474ec9259a02229fbc5 = L.marker(
                 [59.9643163, 30.2862535],
                 {}
-            ).addTo(map_b987a647cfce68f1d9003ca4f6e76ae1);
+            ).addTo(map_5843230df7f348fc16f2136e662e3eb8);
         
     
-            var icon_cd28d1b1acbab33e90ef3fcde164c107 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "#a35935", "prefix": "glyphicon"}
+            var icon_ee1b5cb311c92af1aad4fdf229d0cbcd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "#0de219", "prefix": "glyphicon"}
             );
-            marker_2d791605969b97f922c2e202076f3f8a.setIcon(icon_cd28d1b1acbab33e90ef3fcde164c107);
+            marker_8b604c8ae622c474ec9259a02229fbc5.setIcon(icon_ee1b5cb311c92af1aad4fdf229d0cbcd);
         
     
-        var popup_ac3c32dd6fcad95b0437eb84230ab252 = L.popup({"maxWidth": "100%"});
+        var popup_754936c3895e8bf588d770c189c9b8f0 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_9765585b5a02edadccb46fae2792cead = $(`<div id="html_9765585b5a02edadccb46fae2792cead" style="width: 100.0%; height: 100.0%;"> *456#</div>`)[0];
-                popup_ac3c32dd6fcad95b0437eb84230ab252.setContent(html_9765585b5a02edadccb46fae2792cead);
+                var html_9eca778168ebf951da3655b69608b64c = $(`<div id="html_9eca778168ebf951da3655b69608b64c" style="width: 100.0%; height: 100.0%;"> *456#</div>`)[0];
+                popup_754936c3895e8bf588d770c189c9b8f0.setContent(html_9eca778168ebf951da3655b69608b64c);
             
         
 
-        marker_2d791605969b97f922c2e202076f3f8a.bindPopup(popup_ac3c32dd6fcad95b0437eb84230ab252)
+        marker_8b604c8ae622c474ec9259a02229fbc5.bindPopup(popup_754936c3895e8bf588d770c189c9b8f0)
         ;
 
         
     
     
-            var locate_control_2dc02d2cda095ccbd0fb047a610a998f = L.control.locate(
+            var locate_control_091bbe21c593de25095cc5f22c3e87b1 = L.control.locate(
                 {}
-            ).addTo(map_b987a647cfce68f1d9003ca4f6e76ae1);
+            ).addTo(map_5843230df7f348fc16f2136e662e3eb8);
             
         
 </script>
