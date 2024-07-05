@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e8bec7701b8edb5bcc063fb59dd4ef38 {
+                #map_b42e034b9e12dc11d2218f39666e6967 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -37,79 +37,18 @@
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
-
-<style>
-    #map {
-        width: 100vw;
-        height: 100vh;
-        transform-origin: center center;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-    }
-</style>
 </head>
 <body>
-<div style="position: absolute; top: 10px; left: 10px; z-index: 1000;">
-    <button onclick="rotateMapLeft()">Rotate Left</button>
-    <button onclick="rotateMapRight()">Rotate Right</button>
-</div>
-
     
     
-            <div class="folium-map" id="map_e8bec7701b8edb5bcc063fb59dd4ef38" ></div>
+            <div class="folium-map" id="map_b42e034b9e12dc11d2218f39666e6967" ></div>
         
-
-<script>
-    var mapElement = document.getElementById('map');
-    var rotationAngle = 0;
-
-    function rotateMapLeft() {
-        rotationAngle = (rotationAngle - 15) % 360;
-        mapElement.style.transform = 'rotate(' + rotationAngle + 'deg)';
-    }
-
-    function rotateMapRight() {
-        rotationAngle = (rotationAngle + 15) % 360;
-        mapElement.style.transform = 'rotate(' + rotationAngle + 'deg)';
-    }
-
-    var startAngle, initialRotationAngle;
-
-    function onTouchStart(event) {
-        if (event.touches.length === 2) {
-            var touch1 = event.touches[0];
-            var touch2 = event.touches[1];
-            startAngle = Math.atan2(touch2.pageY - touch1.pageY, touch2.pageX - touch1.pageX) * 180 / Math.PI;
-            initialRotationAngle = rotationAngle;
-        }
-    }
-
-    function onTouchMove(event) {
-        if (event.touches.length === 2) {
-            var touch1 = event.touches[0];
-            var touch2 = event.touches[1];
-            var currentAngle = Math.atan2(touch2.pageY - touch1.pageY, touch2.pageX - touch1.pageX) * 180 / Math.PI;
-            rotationAngle = initialRotationAngle + (currentAngle - startAngle);
-            mapElement.style.transform = 'rotate(' + rotationAngle + 'deg)';
-        }
-    }
-
-    document.addEventListener('touchstart', onTouchStart, false);
-    document.addEventListener('touchmove', onTouchMove, false);
-</script>
 </body>
 <script>
     
     
-            var map_e8bec7701b8edb5bcc063fb59dd4ef38 = L.map(
-                "map_e8bec7701b8edb5bcc063fb59dd4ef38",
+            var map_b42e034b9e12dc11d2218f39666e6967 = L.map(
+                "map_b42e034b9e12dc11d2218f39666e6967",
                 {
                     center: [59.9643163, 30.2862535],
                     crs: L.CRS.EPSG3857,
@@ -123,45 +62,45 @@
 
         
     
-            var tile_layer_dc17bfa57ee0324fa466a59f48986aae = L.tileLayer(
+            var tile_layer_b0ab15deadc9339157443756be53833b = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_dc17bfa57ee0324fa466a59f48986aae.addTo(map_e8bec7701b8edb5bcc063fb59dd4ef38);
+            tile_layer_b0ab15deadc9339157443756be53833b.addTo(map_b42e034b9e12dc11d2218f39666e6967);
         
     
-            var marker_56d06455a653c9b19f25204870146a24 = L.marker(
+            var marker_617e6b3dda1b855717fab75eba91965a = L.marker(
                 [59.9643163, 30.2862535],
                 {}
-            ).addTo(map_e8bec7701b8edb5bcc063fb59dd4ef38);
+            ).addTo(map_b42e034b9e12dc11d2218f39666e6967);
         
     
-            var icon_47746dcdd8c28c306dbcfe8d89541a10 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "#d4e1eb", "prefix": "glyphicon"}
+            var icon_2d33d94e0f86206ce62c390801aaf727 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
             );
-            marker_56d06455a653c9b19f25204870146a24.setIcon(icon_47746dcdd8c28c306dbcfe8d89541a10);
+            marker_617e6b3dda1b855717fab75eba91965a.setIcon(icon_2d33d94e0f86206ce62c390801aaf727);
         
     
-        var popup_0e925bd4030563a3c004edab96247118 = L.popup({"maxWidth": "100%"});
+        var popup_95948911899168485e889c52ebddbd02 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_c8815bdb32326b15a48eeca6f743fc24 = $(`<div id="html_c8815bdb32326b15a48eeca6f743fc24" style="width: 100.0%; height: 100.0%;"> *456#</div>`)[0];
-                popup_0e925bd4030563a3c004edab96247118.setContent(html_c8815bdb32326b15a48eeca6f743fc24);
+                var html_80d18d4c90f370cb567ee0caddb9c92f = $(`<div id="html_80d18d4c90f370cb567ee0caddb9c92f" style="width: 100.0%; height: 100.0%;"> *456#</div>`)[0];
+                popup_95948911899168485e889c52ebddbd02.setContent(html_80d18d4c90f370cb567ee0caddb9c92f);
             
         
 
-        marker_56d06455a653c9b19f25204870146a24.bindPopup(popup_0e925bd4030563a3c004edab96247118)
+        marker_617e6b3dda1b855717fab75eba91965a.bindPopup(popup_95948911899168485e889c52ebddbd02)
         ;
 
         
     
     
-            var locate_control_52d048830fa9e9266e807a7914555987 = L.control.locate(
+            var locate_control_85f106a04ca26a7d199100b66bc1f067 = L.control.locate(
                 {}
-            ).addTo(map_e8bec7701b8edb5bcc063fb59dd4ef38);
+            ).addTo(map_b42e034b9e12dc11d2218f39666e6967);
             
         
 </script>
