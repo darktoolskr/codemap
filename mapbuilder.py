@@ -1,3 +1,9 @@
+'''
+add to <head>
+<title>Saint-P Secret Map</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+'''
+
 import pandas as pd
 from opencage.geocoder import OpenCageGeocode
 import folium
