@@ -33,19 +33,9 @@ for _, row in df.iterrows():
     marker = folium.Marker(
         location=[row['Latitude'], row['Longitude']],
         popup=popup_text,
-        tooltip=popup_text,
         icon=folium.Icon(color=c)
     )
     marker.add_to(marker_cluster)
-
-# Add a search control to the map
-search = Search(
-    layer=marker_cluster,
-    geom_type='Point',
-    placeholder='Search for an address',
-    collapsed=False,
-    search_label='tooltip'
-).add_to(map_osm)
 
 # Add a Leaflet control for locating user's position
 LocateControl().add_to(map_osm)
