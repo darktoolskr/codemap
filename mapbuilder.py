@@ -5,7 +5,7 @@ from folium.plugins import MarkerCluster, LocateControl, Search
 import random
 
 # Load your CSV file and preprocess
-df = pd.read_csv('addresses.csv')
+df = pd.read_csv('final_addresses.csv')
 
 # Ensure Latitude and Longitude are numeric
 df['Latitude'] = pd.to_numeric(df['Latitude'], errors='coerce')
@@ -31,11 +31,13 @@ for _, row in df.iterrows():
     c = random_color()
     address = ' '.join(row['address'].split(' ')[1:])  # Remove the first word
     popup_text = f"{address}, {row['code']}"
-    folium.Marker(
+    marker = folium.Marker(
         location=[row['Latitude'], row['Longitude']],
         popup=popup_text,
         icon=folium.Icon(color=c)
-    ).add_to(marker_cluster)
+    )
+    marker.add_to(marker_cluster)
+    marker.add_child(folium.Tooltip(popup_text))  # Add tooltip for search
 
 # Add a search control to the map
 search = Search(
@@ -43,7 +45,7 @@ search = Search(
     geom_type='Point',
     placeholder='Search for an address',
     collapsed=False,
-    search_label='address'
+    search_label='tooltip'
 ).add_to(map_osm)
 
 # Add a Leaflet control for locating user's position
